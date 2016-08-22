@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Electorum Demo</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/bootstrap.css?1422792965" />
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/materialadmin.css?1425466319" />
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/font-awesome.min.css?1422529194" />
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/libs/bootstrap-datepicker/datepicker3.css?1424887858" />
+    <link type="text/css" rel="stylesheet" href="assets/css/theme-default/libs/summernote/summernote.css?1425218701" />
+    <link rel="stylesheet" href="assets/less/style.css"/>
+</head>
+<body>
+<header style="background: #FFF">
+    <div class="container">
+        <div class="row">
+            <div class="card" style="margin-bottom: 0">
+                <div class="card-head">
+                    <header>
+                        Casillas por Distrito : I
+                    </header>
+
+                    <form class="form style-primary-bright" onsubmit="return false;" style="float: right; width: 300px; margin-right: 20px; padding: 0 20px">
+                        <div class="form-group floating-label">
+                            <select class="form-control select2-list" data-placeholder="Nombre de casilla">
+                                <option selected="selected" value="01">Casillas por Distrito : I</option>
+                                <option value="02">Casillas por Distrito : II</option>
+                                <option value="03">Casillas por Distrito : III</option>
+                                <option value="04">Casillas por Distrito : IV</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="horizontal-scroll">
+    <div class="data">
+        <div class="relative">
+            <div id="zone"></div>
+        </div>
+    </div>
+    <div id="canvasBoleta" style="background-image: url('/assets/img/boleta1.jpg')"></div>
+    <div class="selectZone">
+        <ul class="problems">
+            <li><a href="#" class="sendError">Problema 1</a></li>
+            <li><a href="#" class="sendError">Problema 2</a></li>
+            <li><a href="#" class="sendError">Problema con nombre largo</a></li>
+            <li><a href="#" class="sendError">Problema 4</a></li>
+            <li><a href="#" class="sendError">Problema 5</a></li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h4 style="margin-top: 20px" class="text-info">Esta boleta tiene <span id="number">1</span> incidencia</h4>
+            </div>
+            <div class="col-md-4 text-center" style="background: #caf0ee">
+                <form class="form style-primary-bright" onsubmit="return false;" style="float: right; width: 100%; margin-right: 20px; padding: 0 20px">
+                    <div class="form-group floating-label">
+                        <select class="form-control select2-list" data-placeholder="Nombre de casilla">
+                            <option selected="selected" value="01">Casillas por Distrito : I</option>
+                            <option value="02">Casillas por Distrito : II</option>
+                            <option value="03">Casillas por Distrito : III</option>
+                            <option value="04">Casillas por Distrito : IV</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 text-right" style=" margin-top: 16px;">
+                <div class="btn ink-reaction btn-raised btn-primary">Siguiente</div>
+                <div class="btn ink-reaction btn-raised btn-primary">Anterior</div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var texts = [
+            'Acatlán de Pérez Figueroa',
+            'Aquiles Serdán',
+            198,
+            500,
+            6,
+            506,
+            504
+        ];
+
+//        top, left
+        var positions = [
+            [363, 131],
+            [423, 131],
+            [510, 611],
+            [586, 611],
+            [663, 611],
+            [735, 611],
+            [810, 611]
+        ];
+
+        $.each(texts, function(index, value){
+            $("#zone").append('' +
+            '<p class="dragme" style="top:'+positions[index][0]+'px; left:'+positions[index][1]+'px;">'+ value +
+            '<span class="options">' +
+                '<a class="itsFine"><i class="fa fa-check"></i> No es un error</a>' +
+                '<a class="addError"><i class="fa fa-flag-o"></i> Reportar incidencia</a>' +
+            '</span>'+
+            '</p>');
+        });
+
+        var problem = $("#zone .dragme:eq(6)");
+        problem.addClass('warning');
+
+        var problemsFloat = $(".selectZone"),
+                sendError = $(".sendError");
+
+        $(".itsFine").click(function(){
+            $(this).closest(".dragme").removeClass('warning').addClass("succes");
+            problemsFloat.hide();
+            validateErros();
+        });
+
+        $(".addError").click(function(){
+            var $this = $(this),
+                $parent = $this.closest('.dragme'),
+                positionTop,
+                positionLeft,
+                width,
+                height
+                    ;
+
+            positionTop = $parent.position().top;
+            positionLeft = $parent.position().left;
+            width = $parent.width();
+            height = $parent.height();
+            $parent.addClass('hover');
+            problemsFloat.css({
+                left: positionLeft + width,
+                top: positionTop + height
+            }).show();
+        });
+
+        sendError.click(function(){
+            var $this = $(this),
+                $parent = $(".dragme.hover")
+            ;
+            $parent.removeClass('succes hover').addClass("warning");
+            problemsFloat.hide();
+            validateErros();
+        })
+    });
+
+    function startDrag(e) {
+//        if (!e) {
+//            var e = window.event;
+//        }
+//        if(e.preventDefault) e.preventDefault();
+
+        targ = e.target ? e.target : e.srcElement;
+
+        if (targ.className != 'dragme') {return};
+        // calculate event X, Y coordinates
+        offsetX = e.clientX;
+        offsetY = e.clientY;
+
+        if(!targ.style.left) { targ.style.left='0px'};
+        if (!targ.style.top) { targ.style.top='0px'};
+
+        coordX = parseInt(targ.style.left);
+        coordY = parseInt(targ.style.top);
+        drag = true;
+
+        document.onmousemove=dragDiv;
+        return false;
+    }
+    function dragDiv(e) {
+        if (!drag) {return};
+        if (!e) { var e= window.event};
+        targ.style.left=coordX+e.clientX-offsetX+'px';
+        targ.style.top=coordY+e.clientY-offsetY+'px';
+        return false;
+    }
+    function stopDrag() {
+        drag=false;
+    }
+    window.onload = function() {
+        document.onmousedown = startDrag;
+        document.onmouseup = stopDrag;
+    };
+    function validateErros(){
+        $("#number").text($(".dragme.warning").length);
+    }
+</script>
+</html>

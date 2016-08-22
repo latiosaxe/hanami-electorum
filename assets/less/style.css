@@ -1,0 +1,234 @@
+.menubar-foot-panel-2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid rgba(12, 12, 12, 0.07);
+}
+.data .relative p.dragme {
+  top: 0;
+  left: 0;
+  margin: 0;
+  color: #FFF;
+  font-size: 15px;
+  padding: 5px 10px;
+  position: absolute;
+  letter-spacing: 1px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+}
+.data .relative p.dragme .options {
+  display: none;
+}
+.data .relative p.dragme .options a {
+  margin: 0 10px;
+  display: inline-block;
+}
+.data .relative p.dragme .options a.itsFine {
+  display: none;
+}
+.data .relative p.dragme.warning {
+  background: rgba(255, 7, 11, 0.73);
+}
+.data .relative p.dragme.warning .options {
+  display: inline-block;
+}
+.data .relative p.dragme.warning .options a.itsFine {
+  display: inline-block;
+}
+.data .relative p.dragme.succes {
+  background: rgba(0, 193, 54, 0.73);
+}
+.data .relative p.dragme:hover .options,
+.data .relative p.dragme.hover .options {
+  display: inline-block;
+}
+.selectZone {
+  top: 0;
+  left: 0;
+  display: none;
+  max-width: 320px;
+  position: absolute;
+}
+.selectZone .problems {
+  margin: 0;
+  list-style: none;
+  padding: 5px 0;
+  background: #FFF;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.selectZone .problems li a {
+  padding: 5px 15px;
+  display: block;
+  text-decoration: none;
+}
+.selectZone .problems li:hover a {
+  background: rgba(0, 0, 0, 0.05);
+}
+.dragme {
+  cursor: move;
+  position: relative;
+}
+.horizontal-scroll {
+  height: auto;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+}
+#canvasBoleta {
+  width: 1900px;
+  height: 937px;
+  background: #eaeaea;
+}
+.loading {
+  margin: 0 auto 40px;
+  height: 85px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  width: 85px;
+}
+.loading-circle {
+  -webkit-animation: 2291ms loading infinite;
+  animation: 2291ms loading infinite;
+  background-color: #0aa89e;
+  border-radius: 50%;
+  height: 14px;
+  position: absolute;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  width: 14px;
+}
+.loading-circle:nth-child(1) {
+  -webkit-animation-delay: 42ms;
+  animation-delay: 42ms;
+}
+.loading-circle:nth-child(2) {
+  -webkit-animation-delay: 84ms;
+  animation-delay: 84ms;
+}
+.loading-circle:nth-child(3) {
+  -webkit-animation-delay: 126ms;
+  animation-delay: 126ms;
+}
+.loading-circle:nth-child(4) {
+  -webkit-animation-delay: 168ms;
+  animation-delay: 168ms;
+}
+.loading-circle:nth-child(5) {
+  -webkit-animation-delay: 210ms;
+  animation-delay: 210ms;
+}
+.loading-circle:nth-child(6) {
+  -webkit-animation-delay: 252ms;
+  animation-delay: 252ms;
+}
+.loading-circle:nth-child(7) {
+  -webkit-animation-delay: 294ms;
+  animation-delay: 294ms;
+}
+.loading-circle:nth-child(8) {
+  -webkit-animation-delay: 336ms;
+  animation-delay: 336ms;
+}
+.loading-circle:nth-child(9) {
+  -webkit-animation-delay: 378ms;
+  animation-delay: 378ms;
+}
+.loading-circle:nth-child(10) {
+  -webkit-animation-delay: 420ms;
+  animation-delay: 420ms;
+}
+.loading-circle:nth-child(11) {
+  -webkit-animation-delay: 462ms;
+  animation-delay: 462ms;
+}
+.loading-circle:nth-child(12) {
+  -webkit-animation-delay: 504ms;
+  animation-delay: 504ms;
+}
+.loading-circle:nth-child(13) {
+  -webkit-animation-delay: 546ms;
+  animation-delay: 546ms;
+}
+.loading-row1 {
+  top: 1.3px;
+}
+.loading-row2 {
+  top: 18.95px;
+}
+.loading-row3 {
+  top: 36.55px;
+}
+.loading-row4 {
+  top: 54.2px;
+}
+.loading-row5 {
+  top: 71.85px;
+}
+.loading-col1 {
+  left: 1.25px;
+}
+.loading-col2 {
+  left: 18.85px;
+}
+.loading-col3 {
+  left: 36.5px;
+}
+.loading-col4 {
+  left: 54.15px;
+}
+.loading-col5 {
+  left: 71.8px;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  27.28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  36.36% {
+    -webkit-transform: scale(0.857);
+    transform: scale(0.857);
+  }
+  54.55% {
+    -webkit-transform: scale(0.857);
+    transform: scale(0.857);
+  }
+  63.64% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  27.28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  36.36% {
+    -webkit-transform: scale(0.857);
+    transform: scale(0.857);
+  }
+  54.55% {
+    -webkit-transform: scale(0.857);
+    transform: scale(0.857);
+  }
+  63.64% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Electorum Demo</title>
+
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/bootstrap.css?1422792965" />
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/materialadmin.css?1425466319" />
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/font-awesome.min.css?1422529194" />
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/libs/bootstrap-datepicker/datepicker3.css?1424887858" />
+		<link type="text/css" rel="stylesheet" href="assets/css/theme-default/libs/summernote/summernote.css?1425218701" />
+
+		<link type="text/css" rel="stylesheet" href="assets/js/libs/select2/select2-bootstrap.css" />
+
+		<link type="text/css" rel="stylesheet" href="assets/less/style.css" />
+		<!-- END STYLESHEETS -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="assets/js/libs/utils/html5shiv.js?1403934957"></script>
+		<script type="text/javascript" src="assets/js/libs/utils/respond.min.js?1403934956"></script>
+		<![endif]-->
+	</head>
+	<body class="menubar-hoverable header-fixed  menubar-pin">
+
+		<!-- BEGIN HEADER-->
+		<header id="header" >
+			<div class="headerbar">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+								<a href="dashboard.html">
+									<span class="text-lg text-bold text-primary">ELECTORUM</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+								<i class="fa fa-bars"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options">
+						<li>
+							<!-- Search form -->
+							<form class="navbar-search" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" name="headerSearch" placeholder="Busqueda">
+								</div>
+								<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div id="base">
+			<div id="content">
+				<section>
+					<div class="section-body contain-lg">
+
+					</div>
+				</section>
+			</div>
+			<!-- END CONTENT -->
+
+			<!-- BEGIN MENUBAR-->
+			<div id="menubar" class="menubar-inverse ">
+				<div class="menubar-fixed-panel">
+					<div>
+						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<i class="fa fa-bars"></i>
+						</a>
+					</div>
+					<div class="expanded">
+						<a href="dashboard.html">
+							<span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+						</a>
+					</div>
+				</div>
+				<div class="menubar-scroll-panel">
+
+
+					<ul id="main-menu" class="gui-controls">
+						<li>
+							<a href="dashboard.html" >
+								<div class="gui-icon"><i class="md md-home"></i></div>
+								<span class="title">Inicio</span>
+							</a>
+						</li>
+						<li class="gui-folder">
+							<a>
+								<div class="gui-icon"><i class="md md-assessment"></i></div>
+								<span class="title">Analisis</span>
+							</a>
+                            <ul>
+                                <li class="gui-folder">
+                                    <a href="/distritos.html"><span class="title">Consultar</span></a>
+                                </li>
+                                <li class="gui-folder">
+                                    <a href="/create.html"><span class="title">Crear</span></a>
+                                </li>
+                            </ul>
+						</li>
+					</ul>
+
+
+					<div class="menubar-foot-panel-2">
+                        <p style="padding: 10px 20px 0">Administrar</p>
+                        <ul class="gui-controls">
+                            <li>
+                                <a href="dashboard.html" >
+                                    <div class="gui-icon"><i class="md md-report-problem"></i></div>
+                                    <span class="title">Incidencias</span>
+                                </a>
+                                <a href="#" class="alert-message-demo">
+                                    <div class="gui-icon"><i class="md md-assignment-ind"></i></div>
+                                    <span class="title">Usuarios</span>
+                                </a>
+                            </li>
+                        </ul>
+						<!--<small class="no-linebreak hidden-folded">-->
+							<!--<span class="opacity-75">Demo 2016 para</span> <strong>Electorum</strong>-->
+						<!--</small>-->
+					</div>
+				</div><!--end .menubar-scroll-panel-->
+			</div><!--end #menubar-->
+        </div>
+
+
+		<script src="assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="assets/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="assets/js/libs/spin.js/spin.min.js"></script>
+		<script src="assets/js/libs/autosize/jquery.autosize.min.js"></script>
+
+		<script src="assets/js/libs/moment/moment.min.js"></script>
+		<script src="assets/js/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+		<script src="assets/js/libs/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+
+		<script src="assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="assets/js/libs/summernote/summernote.min.js"></script>
+        <script src="assets/js/libs/select2/select2.min.js"></script>
+
+
+		<script src="assets/js/core/source/App.js"></script>
+		<script src="assets/js/core/source/AppNavigation.js"></script>
+		<script src="assets/js/core/source/AppOffcanvas.js"></script>
+		<script src="assets/js/core/source/AppCard.js"></script>
+		<script src="assets/js/core/source/AppForm.js"></script>
+		<script src="assets/js/core/source/AppNavSearch.js"></script>
+		<script src="assets/js/core/source/AppVendor.js"></script>
+
+		<script src="assets/js/core/demo/Demo.js"></script>
+		<script src="assets/js/core/demo/DemoPageContacts.js"></script>
+
+		<script src="assets/js/electorum.js"></script>
+		<!-- END JAVASCRIPT -->
+
+	</body>
+</html>
